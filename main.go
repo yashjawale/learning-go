@@ -3,36 +3,27 @@ package main
 import "fmt"
 
 func main() {
-	
-	// strings
-	// var nameOne string = "mario"
-	// var nameTwo = "luigi"
-	// var nameThree string
+	age := 35
+	name := "yash"
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
-	
-	// nameOne = "peach"
-	// nameThree = "bowser"
+	// Print
+	fmt.Print("hello, ")
+	fmt.Print("world! \n")
+	fmt.Print("new line \n")
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// Println
+	fmt.Println("hello world!")
+	fmt.Println("goodbye ninjas!")
+	fmt.Println("my age is", age, "and name is", name)
 
-	// nameFour := "yoshi" // cannot be used outside of a function
-	// fmt.Println(nameFour)
+	// Printf (formatted strings) %_ = format specifier
+	fmt.Printf(("my age is %v and name is %v \n"), age, name)
+	fmt.Printf(("my age is %q and name is %q \n"), age, name)
+	fmt.Printf(("age is of type %T \n"), age)
+	fmt.Printf(("you scored %f points! \n"), 9.02)
+	fmt.Printf(("you scored %0.1f points! \n"), 9.0)
 
-	// integers
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits & memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 43.1
-	var scoreTwo float64 = 54352343432.432432 // Default inferred type
-
-	fmt.Println(scoreOne, scoreTwo)
+	// Sprintf (save formatted strings)
+	var str = fmt.Sprintf(("my age is %v and name is %v \n"), age, name)
+	fmt.Println("the saved string is:", str)
 }
