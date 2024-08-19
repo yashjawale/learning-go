@@ -1,32 +1,42 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
+
+// Standard Library available at: https://golang.org/pkg/
 
 func main() {
+	greeting := "Hello, World!"
 
-	// Array declaration
-	var ages [3]int = [3]int{20, 25, 30}
-	fmt.Println(ages, len(ages))
+	fmt.Println(strings.Contains(greeting, "Hello!"))
+	fmt.Println(strings.ReplaceAll(greeting, "Hello", "Hi"))
+	fmt.Println(strings.ToUpper(greeting))
+	fmt.Println(strings.Index(greeting, "World"))
+	fmt.Println(strings.Split(greeting, ",")) // Returns a slice of strings
+	// Prints type
+	fmt.Printf("Type: %T\n", strings.Split(greeting, ","))
+	
+	// Does not modify the original string
+	fmt.Println("Original string value: ", greeting)
 
-	ages[2]	= 35
+	// Sort package
+	ages := []int{45, 20, 35, 30, 75, 60, 50, 25}
 
-	names := [4]string{"John", "Doe", "Jane", "Doe"}
+	sort.Ints(ages)
+	fmt.Println(ages) // Changes the original slice
 
-	// Slices
-	var scores = []int{100, 50, 60}
-	scores = append(scores, 85)
+	index := sort.SearchInts(ages, 1) // Returns the index of the value if found
+	// If not found, returns the index where the value should be inserted
 
-	fmt.Println(ages, names, scores)
+	fmt.Println(index)
 
-	// Slice ranges
-	// Get range of elements from an array or slice & create a new slice
-	rangeOne := names[1:3]
-	rangeTwo := names[2:]
-	rangeThree := names[:3]
+	names := []string{"Daniel", "Jenny", "Steven", "Alice", "John"}
 
-	fmt.Println(rangeOne, rangeTwo, rangeThree)
+	sort.Strings(names)
+	fmt.Println(names)
 
-	rangeOne = append(rangeOne, "Smith")
-
-	fmt.Println(rangeOne)
+	fmt.Println(sort.SearchStrings(names, "Alice"))
 }
