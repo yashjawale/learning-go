@@ -5,31 +5,34 @@ import (
 )
 
 func main() {
-	// x := 0
-	// for x < 5 {
-	// 	fmt.Println("Value of x is:", x)
-	// 	x++
-	// }
+	age := 45
 
-	// for i := 0; i < 5; i++ {
-	// 	fmt.Println("Value of i is:", i)
-	// }
+	fmt.Println(age <= 50)
+	fmt.Println(age >= 50)
+	fmt.Println(age == 45)
+	fmt.Println(age != 50)
 
-	names := []string{"John", "Doe", "Jane", "Doe"}
-
-	// for i := 0; i < len(names); i++ {
-	// 	fmt.Println(names[i])
-	// }
-
-	// for index, value := range names {
-	// 	fmt.Printf("The value at index %v is %v \n", index, value)
-	// }
-
-	for _, value := range names {
-		fmt.Printf("The value at is %v \n", value)
-		value = "new value" // Does not change the value in the slice
-		// Value is local copy of the value in the slice
+	if age < 30 {
+		fmt.Println("Age is less than 30")
+	} else if age < 40 {
+		fmt.Println("Age is less than 40")
+	} else {
+		fmt.Println("Age is greater than 40")
 	}
 
-	fmt.Println(names)
+	names := []string{"John", "Paul", "George", "Ringo"}
+
+	for index, value := range names {
+		if index == 1 {
+			fmt.Println("Continuing at pos", index)
+			continue
+		}
+		if index > 2 {
+			fmt.Println("Breaking at pos", index)
+			break
+		}
+
+		fmt.Printf("The value at pos %v is %v\n", index, value)
+	}
+
 }
