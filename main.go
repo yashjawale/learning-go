@@ -1,32 +1,18 @@
 package main
 
-import (
-	"strings"
-)
+import "fmt"
 
-func getInitials(n string) (string, string) {
-	s := strings.ToUpper(n)
-	names := strings.Split(s, " ")
-
-	var initials []string
-	for _, v := range names {
-		initials = append(initials, v[:1])
-	}
-
-	if len(initials) > 1 {
-		return initials[0], initials[1]
-	}
-
-	return initials[0], "_"
-}
+var score = 99.5
 
 func main() {
-	fn1, sn1 := getInitials("tifa lockhart")
-	fn2, sn2 := getInitials("cloud strife")
+	sayHello("Gopher")
 
-	println(fn1, sn1)
-	println(fn2, sn2)
+	for _, p := range points {
+		fmt.Println(p)
+	}
 
-	fn3, sn3 := getInitials("aerith")
-	println(fn3, sn3)
+	// var score = 99.5 // This will not work
+	// Has to be declared outside of the main function at root level
+
+	showScore()
 }
